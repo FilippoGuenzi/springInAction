@@ -12,3 +12,24 @@ BraveKnight isn't coupled to any specific implementation since the dependence is
 Since you provide the knight the quest he can embark on you can test it easily providing him a mock quest.
 
 How to provide a Quest to the Knight ?
+
+XML wiring
+----------
+<beans>
+    <bean id="a" class="...implementationClassA">
+        <constructor-arg ref="b" />
+    </bean>
+    <bean id="b" class="...implementationClassB">
+</beans>
+In class you don't specify the interface but the real implementation that will be initialized with it's full Canonical Name
+In ref of the constructor-arg you put the id of the been that will be injected.
+
+Java wiring
+-----------
+@Configuration
+public class KnightConfig {
+    @Bean
+    public Knight knight(){return new BraveKnight(quest());}
+    @Bean
+    public Quest quest(){return new SlayDragonQuest(System.out);}
+}
