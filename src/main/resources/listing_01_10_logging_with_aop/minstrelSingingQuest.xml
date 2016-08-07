@@ -17,8 +17,8 @@
         <constructor-arg value="#{T(System).out}"/>
     </bean>
     <aop:config>
-        <aop:aspect ref="minstrel"> <!--points to the minstrel bean-->
-            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/> <!--poincut-->
+        <aop:aspect ref="minstrel"> <!--turns the minstrel bean into an aspect-->
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/> <!--poincut : where about the advices will be applied-->
             <aop:before method="singBeforeQuest" pointcut-ref="embark"/> <!--before advice-->
             <aop:after method="singAfterQuest" pointcut-ref="embark"/> <!--after advice-->
         </aop:aspect>

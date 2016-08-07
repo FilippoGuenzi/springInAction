@@ -1,5 +1,7 @@
-package _01_core_spring._01_springing_into_action._01_simplifying_java_development._02_injecting_dependencies.listing_01_02_no_di;
+package listing_01_02_no_di;
 
+import _01_core_spring._01_springing_into_action._01_simplifying_java_development._02_injecting_dependencies.listing_01_02_no_di.DamselRescuingKnight;
+import _01_core_spring._01_springing_into_action._01_simplifying_java_development._02_injecting_dependencies.listing_01_02_no_di.RescueDamselQuest;
 import org.junit.Test;
 import org.mockito.Mockito;
 
