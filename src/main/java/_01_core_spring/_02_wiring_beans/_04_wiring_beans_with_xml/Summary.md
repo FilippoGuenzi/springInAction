@@ -28,6 +28,8 @@ With nothing more Spring will instantiate the bean by using its default construc
 WIRING BEANS
 ------------
 
+Spring requires every constructor parameter to be provided in wiring configuration 
+
 In order to achieve wiring by constructor injection :
 
 <bean class="...C1">
@@ -36,6 +38,14 @@ In order to achieve wiring by constructor injection :
 <bean id="c2" class="...C2" />
 where C1 has a constructor taking a C2 object as parameter
 
+When there's more than one parameter in the constructor you add the attribute index=0...n to specify the parameter's position.
+<bean class="...C1">
+    <constructor-arg index=0 ref="c2"/>
+    <constructor-arg index=1 ref="c3"/>
+</bean>
+<bean id="c2" class="...C2" />
+<bean id="c3" class="...C3" />
+
 or 
 
 <bean class="...C1" c:abcd-ref="c2"/> //where abcd is the C1 constructor C2 parameter name : class C1 { public C1(C2 abcd){...} }
@@ -43,6 +53,7 @@ or
 In order to use c-ref attribute you need to add its namespace to the beans tag : xmlns:c="http://www.springframework.org/schema/c"
 You can also use an attribute refering to the parameter position in the constructor : c:_0-ref
 (! this one its not working here) If you have just one parameter you can also say : c:_-ref avoiding to give its position
+You can also add 
 
 INJECTING VALUES INSTEAD OF BEANS
 ---------------------------------
@@ -54,7 +65,18 @@ If instead of wiring beans together by constructor injection you want to pass th
     <constructor-arg value="Victor Hugo"/>
 </bean>
 
+Or more explicitly, with the index representing the parameter's position in parameter's list :
+
+<bean class="...C1">
+    <constructor-arg index=0 value="Les Misérables"/>
+    <constructor-arg index=1 value="Victor Hugo"/>
+</bean>
+
 You can do the same with c: argument :
 <bean class="...C1" c:title="Les Misérables" c:author="Victor Hugo"/>
 or with parameter indexes
 <bean class="...C1" c:_0="Les Misérables" c:_1="Victor Hugo"/>
+
+WIRING COLLECTIONS
+------------------
+

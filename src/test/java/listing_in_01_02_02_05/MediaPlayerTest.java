@@ -1,4 +1,4 @@
-package listing_in_02_02_05;
+package listing_in_01_02_02_05;
 
 import _01_core_spring._02_wiring_beans._02_automatically_wiring_beans._05_verifying_automatic_configuration.listing_in_02_02_05.CompactDisc;
 import _01_core_spring._02_wiring_beans._02_automatically_wiring_beans._05_verifying_automatic_configuration.listing_in_02_02_05.MediaPlayer;
