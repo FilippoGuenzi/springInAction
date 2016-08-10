@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._02_declaring_a_simple_bean.Yo"></bean>
+    <bean id="yaya" class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._02_declaring_a_simple_bean.Ya"></bean>
+
+</beans>
