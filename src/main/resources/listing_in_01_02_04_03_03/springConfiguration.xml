@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._03_initializing_a_bean_with_constructor_injection._03_WIRING_COLLECTIONS.Discography">
+        <constructor-arg index="0" value="The Rolling Stones"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="someGirls"/>
+                <ref bean="steelWheels"/>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="someGirls" class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._03_initializing_a_bean_with_constructor_injection._03_WIRING_COLLECTIONS.BlankDisc">
+
+        <constructor-arg index="0" value="The Roling Stones"/>
+        <constructor-arg index="1" value="Some Girls"/>
+        <constructor-arg index="2">
+            <list>
+                <value>Miss You</value>
+                <value>When the whip comes down</value>
+                <value>Just my imagination</value>
+                <value>Some Girls</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="steelWheels" class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._03_initializing_a_bean_with_constructor_injection._03_WIRING_COLLECTIONS.BlankDisc">
+
+        <constructor-arg index="0" value="The Roling Stones"/>
+        <constructor-arg index="1" value="Steel Wheels"/>
+        <constructor-arg index="2">
+            <list>
+                <value>Sad sad sad</value>
+                <value>Mixed emotions</value>
+                <value>Terrifying</value>
+                <value>Hold on to your hat</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

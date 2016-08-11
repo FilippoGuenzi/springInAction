@@ -80,3 +80,25 @@ or with parameter indexes
 WIRING COLLECTIONS
 ------------------
 
+<bean class="...">
+    <constructor-arg>
+        <list>
+            <value></value>
+            ...
+            <value></value>
+        </list>
+    </constructor-arg>
+</bean>
+
+<bean class="...">
+    <constructor-arg>
+        <list>
+            <ref bean="..."/>
+            ...
+            <ref bean="..."/>
+        </list>
+    </constructor-arg>
+</bean>
+
+We can use set instead of list
+Either set or list can be wired into a list, set or even array !! The only difference is that with sets duplicates are discarded and order is not maintained.
