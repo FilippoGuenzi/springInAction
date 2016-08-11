@@ -16,6 +16,10 @@ public class BlankDisc implements CompactDisc {
 
     public void play() {
         System.out.println("Playing " + title + " by " + artist);
-        System.out.println(tracks == null);
+        if (tracks != null) {
+            for(String track : tracks){
+                System.out.println("- track : " + track);
+            }
+        }
     }
 }
