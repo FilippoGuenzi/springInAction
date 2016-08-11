@@ -73,7 +73,7 @@ Or more explicitly, with the index representing the parameter's position in para
 </bean>
 
 You can do the same with c: argument :
-<bean class="...C1" c:title="Les Misérables" c:author="Victor Hugo"/>
+<bean class="...C1" c:title="Les Misérables" c:author="Victor Hugo"/> //notice that for values -ref has disapppeared.
 or with parameter indexes
 <bean class="...C1" c:_0="Les Misérables" c:_1="Victor Hugo"/>
 
@@ -100,5 +100,39 @@ WIRING COLLECTIONS
     </constructor-arg>
 </bean>
 
-We can use set instead of list
+We can use set instead of list.
 Either set or list can be wired into a list, set or even array !! The only difference is that with sets duplicates are discarded and order is not maintained.
+
+PROPERTY (SETTER) INJECTION
+---------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._04_setting_properties._01_CHOOSING_BETWEEN_CONSTRUCTOR_INJECTION_AND_PROPERTY_INJECTION.CDPlayer">
+        <property name="cd" ref="cDisc"/>
+    </bean>
+
+    <bean id="cDisc" class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._04_setting_properties._01_CHOOSING_BETWEEN_CONSTRUCTOR_INJECTION_AND_PROPERTY_INJECTION.CompactDisc">
+        ...
+    </bean>
+
+</beans>
+
+Your IDE won't require you to add a property because, contrarily than at initialisaton of a bean with only a non default constructor, the method call is not required fo the initialisation and it's therefore optional.
+
+As we had a c-namespace for constructor injection we have a p-namespace for property/field injection. It works the same.
+
+Injecting values you'll have a value attribute instead of a ref attribute.
+With p-namespace you'll have a p:propertyName attribute instead of a c:parameterName-ref attribute.
+
+|                      | injecting bean references  | injecting values             | injecting collections of bean refs                             | injecting collections of values                                 |
+|----------------------|----------------------------|------------------------------|----------------------------------------------------------------|-----------------------------------------------------------------|
+| through constructor  | <constructor-arg ref="" /> | <constructor-arg value="" /> | <constructor-arg index=""><list><ref bean=""/></li..></cons..> | <constructor-arg index=""><list><value></value></li..></cons..> |
+|                      | ... c:paramName-ref="" ... | ... c:paramName="" ...       |                                                                |                                                                 |
+|                      | ... c:_0-ref="" ...        | ... c:_0="" ...              |                                                                |                                                                 |
+| through other method | <property ref=""/>         | <property value="" />        |                                                                |                                                                 |
+|                      | ... c:fieldName-ref="" ... | ... c:fieldName="" ...       |                                                                |                                                                 |
+|                      | ... c:_0-ref="" ...        | ... c:_0="" ...              |                                                                |                                                                 |
