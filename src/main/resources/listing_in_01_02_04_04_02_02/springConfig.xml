@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._04_setting_properties._02_INJECTING_PROPERTIES_WITH_LITERAL_VALUES._02_property_injection_with_p_amespace.BlankDisc"
+          p:author="David Bowie" p:title="Ziggy Stardust">
+        <property name="tracks">
+            <list>
+                <value>Ziggy Stardust</value>
+                <value>Space Oddity</value>
+                <value>Changes</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

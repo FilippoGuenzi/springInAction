@@ -121,11 +121,11 @@ PROPERTY (SETTER) INJECTION
 
 </beans>
 
-Your IDE won't require you to add a property because, contrarily than at initialisaton of a bean with only a non default constructor, the method call is not required fo the initialisation and it's therefore optional.
+Your IDE won't require you to add a property because, contrarily than at initialisaton of a bean with only a non default constructor, the method call is not required for the initialisation and is therefore optional.
 
 As we had a c-namespace for constructor injection we have a p-namespace for property/field injection. It works the same.
 
-Injecting values you'll have a value attribute instead of a ref attribute.
+Injecting values you'll have a value attribute instead of a ref attribute. You also need to fill the name attribute, which is the property name.
 With p-namespace you'll have a p:propertyName attribute instead of a c:parameterName-ref attribute.
 
 |                      | injecting bean references  | injecting values             | injecting collections of bean refs                             | injecting collections of values                                 |
@@ -133,6 +133,16 @@ With p-namespace you'll have a p:propertyName attribute instead of a c:parameter
 | through constructor  | <constructor-arg ref="" /> | <constructor-arg value="" /> | <constructor-arg index=""><list><ref bean=""/></li..></cons..> | <constructor-arg index=""><list><value></value></li..></cons..> |
 |                      | ... c:paramName-ref="" ... | ... c:paramName="" ...       |                                                                |                                                                 |
 |                      | ... c:_0-ref="" ...        | ... c:_0="" ...              |                                                                |                                                                 |
-| through other method | <property ref=""/>         | <property value="" />        |                                                                |                                                                 |
+| through other method | <property ref=""/>         | <property value="" />        | <property name=""><list><value></value></list></prop..>                                                                |                                                                 |
 |                      | ... c:fieldName-ref="" ... | ... c:fieldName="" ...       |                                                                |                                                                 |
 |                      | ... c:_0-ref="" ...        | ... c:_0="" ...              |                                                                |                                                                 |
+
+No collection wiring via c-namespace or p-namespace, be it for beans refs or for values.
+
+You also have a util namespace providing :
+- util:list for declaring a <util:list> of refs/values as a java.util.List
+- util:set idem with set
+- util:map idem with set
+- util:constant
+- util:properties
+- util:property-path
