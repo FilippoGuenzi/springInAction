@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="_01_core_spring._02_wiring_beans._05_importing_and_mixing_configurations._01_import_xml_config_into_java_config.CompactDisc">
+        <constructor-arg index="0" value="Prince"/>
+        <constructor-arg index="1" value="Prince and the revolution"/>
+        <constructor-arg index="2">
+            <list>
+                <value>Kiss</value>
+                <value>Dancez</value>
+                <value>Little red corvette</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

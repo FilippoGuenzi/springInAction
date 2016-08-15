@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cd" class="_01_core_spring._02_wiring_beans._05_importing_and_mixing_configurations._02_import_xml_config_into_xml_config.CompactDisc" c:author="The Rolling Stones" c:title="Get your ya-ya's out">
+
+        <constructor-arg index="2">
+            <list>
+                <value>Let's spend the night together</value>
+                <value>I can't get no satisfaction</value>
+                <value>Under my thumb</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--<util:list id="tracks">-->
+        <!--<value>Let's spend the night together</value>-->
+        <!--<value>I can't get no satisfaction</value>-->
+        <!--<value>Under my thumb</value>-->
+    <!--</util:list>-->
+</beans>
