@@ -24,4 +24,6 @@ and this property takes precedence over the other.
 
 You can have profiles defining things completely independent the one from the other :
 - database choice can be chosen in a set of profiles
-- 
+- another service choice
+For each choice you can define a set of profiles. And supposing the families of choices are completely independent you can activate profiles in both families.
+The 2 properties active and default can be affected with multiple profiles. It makes sense when those profiles are independent.
