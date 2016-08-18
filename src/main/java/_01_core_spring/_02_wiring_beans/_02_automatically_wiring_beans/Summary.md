@@ -16,6 +16,9 @@ Automatic wiring works by :
     Better @ComponentScan(basePackageClasses={Class1.class, Class2.class, ...})
 - wiring beans by declaring beans to be injected with @Autowired or @Inject
   if no bean is found for injection or if several candidates are found Spring will throw an exception
+  The @Autowired/@Inject annotation can be placed :
+   - whether on a constructor taking as parameter the bean to be injected
+   - or on any other method taking as parameter the bean to be injected
 
 In order to to load a spring context for tests (independent from autowiring) :
 - annotate your test class with @RunWith(SpringJUnit4ClassRunner.class)
