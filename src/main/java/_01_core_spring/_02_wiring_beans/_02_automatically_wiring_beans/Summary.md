@@ -19,6 +19,9 @@ Automatic wiring works by :
   The @Autowired/@Inject annotation can be placed :
    - whether on a constructor taking as parameter the bean to be injected
    - or on any other method taking as parameter the bean to be injected
+   - or on fields (not advised ?) provided :
+        - the constructor injection is replaced by an init() injection !!! See p.21 (not in great details).
+        - there's no initialization at all, whether by init or by constructor.
 
 In order to to load a spring context for tests (independent from autowiring) :
 - annotate your test class with @RunWith(SpringJUnit4ClassRunner.class)
