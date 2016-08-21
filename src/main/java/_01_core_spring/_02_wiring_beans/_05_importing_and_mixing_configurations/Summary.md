@@ -16,5 +16,5 @@ Import XML config into XML config
 
 Import Java config into XML config
 ----------------------------------
-<bean class"...Config"/>
+<bean class="...Config"/>
 !!! Not working in my case.
