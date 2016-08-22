@@ -77,4 +77,6 @@ Java Auto wiring
 ----------------
 Here the spirit is to have the minimum in the config file (in order to have it auto). 
 We just add the @PropertySource pointing to your properties file
-In the bean we just add @Value("${propName}") in front of the constructor arguments
+In the bean we just :
+- add @Value("${propName}") in front of the constructor arguments
+- prefix the constructor with @Autowired
