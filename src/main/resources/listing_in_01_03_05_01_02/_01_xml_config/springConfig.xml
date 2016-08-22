@@ -12,10 +12,10 @@
 
 >
     <bean
-            class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._01_placeholders_in_xml_config.SpecificCD"
+            class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._01_injecting_external_values._02_resolving_property_placeholders._01_placeholders_in_xml_config.SpecificCD"
             c:author="${author}"
             c:title="${title}"/>
 
-    <context:property-placeholder location="listing_in_01_03_05_02_01/_01_xml_config/prop.properties"/>
+    <context:property-placeholder location="listing_in_01_03_05_01_02/_01_xml_config/prop.properties"/>
 
 </beans>

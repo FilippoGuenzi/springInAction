@@ -43,7 +43,8 @@ Prototype -> Session   : Not a problem : an instance is created at each point of
 
 Request   -> Singleton : the instance of which request do we inject into the singleton ? <---------------------------------------
 Request   -> Prototype : the instance of which request do we inject into the prototype ? <---------------------------------------
-Request   -> Session   : the instance of which request do we inject into the session ? <---------------------------------------
+Request   -> Session   : the instance of which request do we inject into the session ? Usually one request follows another in a session 
+    but nothing stops to open many tabs in your browser and to run many concurrent requests in the same session <---------------------------------------
 
 Session   -> Singleton : the instance of which session do we inject into the singleton ? <---------------------------------------
 Session   -> Prototype : the instance of which session do we inject into the prototype ? <---------------------------------------

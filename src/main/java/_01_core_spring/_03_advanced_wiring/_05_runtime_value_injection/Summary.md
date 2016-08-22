@@ -44,4 +44,37 @@ Other interesting environment methods :
 2. Resolving property placeholders
 ----------------------------------
 
-Still with the @PropertySource set, you can use "${prop}" to retrieve the prop property
+XML config
+----------
+Your bean has a simple constructor and the injection is made in the configuration file.
+1. As usual you specify the values to be injected in the constructor args : c:author="${author}" c:title="${title}"
+2. In addition you add <context:property-placeholder location=""/> pointing to your properties file. You need to add what is required in the <beans> element for this context tag.
+
+Java config
+-----------
+The same here. The bean is a plain POJO with no Spring writing. The injection is made in the configuration file.
+
+    @PropertySource("listing_in_01_03_05_01_02/_02_java_config/prop.properties")
+    public class SpringConfig {
+    
+        @Bean
+        public CompactDisc getCD(@Value("${author}") String author, @Value("${title}") String title) {
+            return new SpecificCD(author, title);
+        }
+    
+        @Bean
+        public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+            return new PropertySourcesPlaceholderConfigurer();
+        }
+    }
+    
+The new part here is :
+- the @PropertySource pointing to your properties file
+- the @Value("${propName}") in front of each @Bean method parameter
+- the PropertySourcesPlaceholderConfigurer bean to enable spring to resolve the placeholders
+
+Java Auto wiring
+----------------
+Here the spirit is to have the minimum in the config file (in order to have it auto). 
+We just add the @PropertySource pointing to your properties file
+In the bean we just add @Value("${propName}") in front of the constructor arguments
