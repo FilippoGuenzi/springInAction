@@ -6,14 +6,27 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MyBean {
+
     private String value;
+    private long currentMillis;
+    private int myOtherBeanSize;
 
     @Autowired
-    public MyBean(@Value("#{1}") String value) {
+    public MyBean(@Value("#{1}") String value, @Value("#{T(java.lang.System).currentTimeMillis()}") long millis, @Value("#{myOtherBean.size}") int mob) {
         this.value = value;
+        this.currentMillis = millis;
+        this.myOtherBeanSize = mob;
     }
 
-    public void showValue(){
+    public void showValue() {
         System.out.println(value);
+    }
+
+    public void showMillis() {
+        System.out.println(this.currentMillis);
+    }
+
+    public void showMyOtherBeanSize() {
+        System.out.println(this.myOtherBeanSize);
     }
 }

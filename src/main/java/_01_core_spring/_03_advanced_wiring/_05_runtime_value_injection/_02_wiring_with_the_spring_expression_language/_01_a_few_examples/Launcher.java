@@ -8,6 +8,8 @@ public class Launcher {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Conf.class);
         MyBean myBean = context.getBean(MyBean.class);
         myBean.showValue();
+        myBean.showMillis();
+        myBean.showMyOtherBeanSize();
         context.close();
     }
 }

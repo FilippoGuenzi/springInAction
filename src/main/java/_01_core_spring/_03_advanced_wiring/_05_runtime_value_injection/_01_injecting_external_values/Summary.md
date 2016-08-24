@@ -75,8 +75,14 @@ The new part here is :
 
 Java Auto wiring
 ----------------
-Here the spirit is to have the minimum in the config file (in order to have it auto). 
-We just add the @PropertySource pointing to your properties file
+Here the spirit is to have the minimum in the config file (in order to have it auto). But you still have to add the :
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
+to resolve the property values.
+And we add the @PropertySource pointing to your properties file
 In the bean we just :
 - add @Value("${propName}") in front of the constructor arguments
 - prefix the constructor with @Autowired
