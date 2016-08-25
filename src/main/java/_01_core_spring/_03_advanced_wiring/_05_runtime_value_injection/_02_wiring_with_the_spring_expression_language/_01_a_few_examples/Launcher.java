@@ -10,6 +10,7 @@ public class Launcher {
         myBean.showValue();
         myBean.showMillis();
         myBean.showMyOtherBeanSize();
+        myBean.readProperty();
         context.close();
     }
 }
