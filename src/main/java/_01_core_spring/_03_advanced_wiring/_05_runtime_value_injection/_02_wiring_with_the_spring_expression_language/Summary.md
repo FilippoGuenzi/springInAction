@@ -11,4 +11,4 @@ T(java.lang.System).currentTimeMillis()
 You can refer to instanciated beans and their properties directly with their names even if they are not injected in the reading bean.
 #{steelWheels.artist}
 
-You can also access properties in properties files with #{systemProperties['vin.cepage']} //ne fonctionne pas pour le moment chez moi !!!!!!!!!!!!!!!!!!!!!!!!!
+You can also access properties in system properties (what does it refer to ?) with #{systemProperties['vin.cepage']} //n'ai pas réussi à le faire fonctionner' !!!!!!!!!!!!!!!!!!

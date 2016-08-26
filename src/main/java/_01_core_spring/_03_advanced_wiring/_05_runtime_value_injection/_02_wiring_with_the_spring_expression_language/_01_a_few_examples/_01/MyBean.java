@@ -10,14 +10,14 @@ public class MyBean {
     private String value;
     private long currentMillis;
     private int myOtherBeanSize;
-    private Integer property;
+    private String property;
 
     @Autowired
     public MyBean(
             @Value("#{1}") String value,
             @Value("#{T(java.lang.System).currentTimeMillis()}") long millis,
             @Value("#{myOtherBean.size}") int mob,
-            @Value("#{systemProperties['myotherbeansize']}") Integer property
+            @Value("#{systemProperties['padoupadou']}") String property
     )  {
         this.value = value;
         this.currentMillis = millis;

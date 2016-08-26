@@ -9,6 +9,6 @@ public class MagicBeanExistsCondition implements Condition {
 
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
         Environment env = conditionContext.getEnvironment();
-        return env.containsProperty("MAVEN_OPTS");
+        return env.containsProperty("ABCD");
     }
 }
