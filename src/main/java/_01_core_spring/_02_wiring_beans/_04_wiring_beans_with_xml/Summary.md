@@ -146,3 +146,11 @@ You also have a util namespace providing :
 - util:constant
 - util:properties
 - util:property-path
+
+In order to use those you need to add in your config :
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="
+        ...
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
+        ...

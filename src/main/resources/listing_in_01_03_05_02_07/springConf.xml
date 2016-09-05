@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       ">
+
+    <context:component-scan base-package="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections"/>
+
+    <bean id="compactDisc" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.CompactDisc" c:songs-ref="songs"/>
+
+    <util:list id="songs">
+        <ref bean="Political World - Bob Dylan"/>
+        <ref bean="Where Teardrops Fall - Bob Dylan"/>
+        <ref bean="Everything Is Broken - Bob Dylan"/>
+        <ref bean="Ring Them Bells - Bob Dylan"/>
+        <ref bean="Man in the Long Black Coat - Bob Dylan"/>
+
+        <ref bean="Helter Skelter - U2"/>
+        <ref bean="Desire - U2"/>
+        <ref bean="I still haven't found what I'm looking for - U2"/>
+        <ref bean="Angel of harlem - U2"/>
+        <ref bean="Silver And Gold - U2"/>
+    </util:list>
+
+    <bean id="Political World - Bob Dylan" p:author="Bob Dylan" p:title="Political World" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Where Teardrops Fall - Bob Dylan" p:author="Bob Dylan" p:title="Where Teardrops Fall" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Everything Is Broken - Bob Dylan" p:author="Bob Dylan" p:title="Everything Is Broken" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Ring Them Bells - Bob Dylan" p:author="Bob Dylan" p:title="Ring Them Bells" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Man in the Long Black Coat - Bob Dylan" p:author="Bob Dylan" p:title="Man in the Long Black Coat" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+
+    <bean id="Helter Skelter - U2" p:author="U2" p:title="Helter Skelter" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Desire - U2" p:author="U2" p:title="Desire" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="I still haven't found what I'm looking for - U2" p:author="U2" p:title="I still haven't found what I'm looking for" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Angel of harlem - U2" p:author="U2" p:title="Angel of harlem" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+    <bean id="Silver And Gold - U2" p:author="U2" p:title="Silver And Gold" class="_01_core_spring._03_advanced_wiring._05_runtime_value_injection._02_wiring_with_the_spring_expression_language._07_evaluating_collections.Song"/>
+
+</beans>

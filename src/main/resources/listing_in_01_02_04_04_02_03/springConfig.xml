@@ -5,7 +5,10 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       ">
 
     <bean class="_01_core_spring._02_wiring_beans._04_wiring_beans_with_xml._04_setting_properties._02_INJECTING_PROPERTIES_WITH_LITERAL_VALUES._03_wiring_collections_with_util_namespace.BlankDisc"
           p:author="David Bowie" p:tracks-ref="trackList">
