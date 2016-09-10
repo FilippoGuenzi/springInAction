@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Launcher {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext springContext = new ClassPathXmlApplicationContext("listing_01_08_starting_a_spring_context/knightsConfig.xml");
+        ClassPathXmlApplicationContext springContext = new ClassPathXmlApplicationContext("listings/_01/_01/_01/_02/knightsConfig.xml");
         Knight knight = springContext.getBean(Knight.class);
         knight.embarkOnQuest();
         springContext.close();

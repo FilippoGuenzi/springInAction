@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Launcher {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listing_in_01_03_05_02_07/springConf.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listings/_01/_03/_05/_02/_07/springConf.xml");
         FilteredSongs filteredSongs = context.getBean(FilteredSongs.class);
         System.out.println("Songs of U2");
         for(Song s : filteredSongs.getSongsOfU2()) {

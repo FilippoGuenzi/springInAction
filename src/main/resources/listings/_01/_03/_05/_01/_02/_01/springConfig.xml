@@ -16,6 +16,6 @@
             c:author="${author}"
             c:title="${title}"/>
 
-    <context:property-placeholder location="listing_in_01_03_05_01_02/_01_xml_config/prop.properties"/>
+    <context:property-placeholder location="prop.properties"/>
 
 </beans>

@@ -8,7 +8,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ComponentScan
-@PropertySource("listing_in_01_03_05_01_02/_03_auto_wiring/prop.properties")
+@PropertySource("listings/_01/_03/_05/_01/_02/_03/prop.properties")
 public class SpringConfig {
 
     @Bean

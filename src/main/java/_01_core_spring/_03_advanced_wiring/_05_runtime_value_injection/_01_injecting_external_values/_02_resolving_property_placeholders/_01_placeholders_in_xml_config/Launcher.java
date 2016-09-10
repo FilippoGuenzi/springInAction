@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Launcher {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listing_in_01_03_05_01_02/_01_xml_config/springConfig.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listings/_01/_03/_05/_01/_02/_01/springConfig.xml");
         CompactDisc cd = context.getBean(CompactDisc.class);
         cd.play();
         context.close();

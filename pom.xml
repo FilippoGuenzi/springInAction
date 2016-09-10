@@ -9,14 +9,14 @@
     <version>1.0.0</version>
 
     <dependencies>
-        <!--introduced in listing 1.02 to test a method in a Unit test-->
+        <!--introduced in listing 1.listings._02 to test a method in a Unit test-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <!--introduced in listing 1.02 to test a method with a mock-->
+        <!--introduced in listing 1.listings._02 to test a method with a mock-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>

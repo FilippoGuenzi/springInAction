@@ -8,7 +8,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ComponentScan(basePackageClasses = {MyBean.class})
-@PropertySource("listing_in_01_03_05_02_01/_01/prop.properties")
+@PropertySource("listings/_01/_03/_05/_02/_01/_01/prop.properties")
 public class Conf {
 
     @Bean

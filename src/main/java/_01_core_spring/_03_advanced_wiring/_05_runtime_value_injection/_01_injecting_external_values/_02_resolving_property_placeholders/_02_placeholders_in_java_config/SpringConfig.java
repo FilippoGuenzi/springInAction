@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-@PropertySource("listing_in_01_03_05_01_02/_02_java_config/prop.properties")
+@PropertySource("listings/_01/_03/_05/_01/_02/_02/prop.properties")
 public class SpringConfig {
 
     @Bean
