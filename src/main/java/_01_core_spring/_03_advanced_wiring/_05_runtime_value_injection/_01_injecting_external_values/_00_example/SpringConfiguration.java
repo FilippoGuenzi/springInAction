@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("listings/_01/_03/_05/_01/prop.properties")
+@PropertySource("_01/_03/_05/_01/prop.properties")
 public class SpringConfiguration {
 
     @Autowired

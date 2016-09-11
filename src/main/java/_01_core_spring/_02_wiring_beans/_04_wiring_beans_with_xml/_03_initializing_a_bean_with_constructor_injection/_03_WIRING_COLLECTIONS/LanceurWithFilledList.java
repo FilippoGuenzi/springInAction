@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class LanceurWithFilledList {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listings/_01/_02/_04/_03/_03/springConfigurationWithFilledList.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("_01/_02/_04/_03/_03/springConfigurationWithFilledList.xml");
         CompactDisc cd = context.getBean(CompactDisc.class);
         cd.play();
         context.close();

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@ImportResource("listings/_01/_02/_05/_01/CDConfig.xml")
+@ImportResource("_01/_02/_05/_01/CDConfig.xml")
 public class PlayerSpringConfig {
     @Bean
     public CDPlayer myPlayer(CompactDisc cd){

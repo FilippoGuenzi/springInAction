@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Launcher {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listings/_01/_03/_03/_01/_03/configuration.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("_01/_03/_03/_01/_03/configuration.xml");
         Diner diner = context.getBean(Diner.class);
         diner.describeDessert();
         context.close();

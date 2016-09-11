@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Lanceur {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("listings/_01/_02/_04/_03/_03/springConfiguration.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("_01/_02/_04/_03/_03/springConfiguration.xml");
         Discography allCDs = context.getBean(Discography.class);
         allCDs.play();
         context.close();

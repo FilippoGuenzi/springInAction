@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Launcher {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext springContext = new ClassPathXmlApplicationContext("listings/_01/_02/_04/_04/_01/springConf.xml");
+        ClassPathXmlApplicationContext springContext = new ClassPathXmlApplicationContext("_01/_02/_04/_04/_01/springConf.xml");
         CDPlayer cdPlayer = springContext.getBean(CDPlayer.class);
         cdPlayer.play();
         springContext.close();
