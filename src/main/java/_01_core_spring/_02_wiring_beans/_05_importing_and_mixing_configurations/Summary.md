@@ -17,4 +17,4 @@ Import XML config into XML config
 Import Java config into XML config
 ----------------------------------
 <bean class="...Config"/>
-!!! Not working in my case.
+<context:annotation-config/> with all what is required in the beans element

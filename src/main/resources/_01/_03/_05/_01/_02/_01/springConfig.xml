@@ -16,6 +16,6 @@
             c:author="${author}"
             c:title="${title}"/>
 
-    <context:property-placeholder location="prop.properties"/>
+    <context:property-placeholder location="_01/_03/_05/_01/_02/_01/prop.properties"/>
 
 </beans>
