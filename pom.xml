@@ -7,6 +7,7 @@
     <groupId>re.play</groupId>
     <artifactId>spring-in-action-3rd-ed</artifactId>
     <version>1.0.0</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <!--introduced in listing 1._01._02 to test a method in a Unit test-->
@@ -26,7 +27,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.2.1.RELEASE</version>
+            <version>4.3.2.RELEASE</version>
         </dependency>
         <!--introduced in listing 1.10 for aop : spring uses aspectj proxies-->
         <dependency>
@@ -38,7 +39,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.0.1.RELEASE</version>
+            <version>4.3.2.RELEASE</version>
         </dependency>
         <!--introduced in 2.5.1.2 (setting up spring MVC) to reference AbstractAnnotationConfigDispatcherServletInitializer-->
         <dependency>
@@ -61,7 +62,16 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <packagingExcludes>WEB-INF/classes/_02_spring_on_the_web/_05_building_spring_web_applications/_01_getting_started_with_spring_mvc/**/*.class</packagingExcludes>
+                </configuration>
+            </plugin>
         </plugins>
+        <finalName>jojo</finalName>
     </build>
 
 </project>
