@@ -9,7 +9,7 @@ import static org.springframework.context.annotation.ComponentScan.*;
 
 @Configuration
 @ComponentScan(
-        includeFilters = { @Filter(type = FilterType.REGEX, pattern = "_02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller.*") },
+        basePackages = {"_02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller"},
         excludeFilters = { @Filter(type = FilterType.REGEX, pattern = "_02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller._01_testing_the_controller.*") }
 )
 public class RootConfig {
