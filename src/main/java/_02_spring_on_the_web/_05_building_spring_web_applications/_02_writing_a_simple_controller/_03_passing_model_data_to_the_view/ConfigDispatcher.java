@@ -9,10 +9,10 @@ public class ConfigDispatcher extends AbstractAnnotationConfigDispatcherServletI
     }
 
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] {ServletConfig.class};
+        return new Class<?>[] { ServletConfig.class };
     }
 
     protected String[] getServletMappings() {
-        return new String[0];
+        return new String[] { "/" };
     }
 }
