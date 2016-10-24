@@ -1,5 +1,6 @@
 package _02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller._03_passing_model_data_to_the_view;
 
+import static org.hamcrest.core.IsCollectionContaining.hasItems;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -22,8 +23,8 @@ public class SpittleControllerTest {
 
     @Test
     public void spittleTest() throws Exception {
-
-        SpittleController spittleController = new SpittleController();
+        SpittleRepository mockRepository = mock(SpittleRepository.class);
+        SpittleController spittleController = new SpittleController(mockRepository);
         MockMvc mockMvc = standaloneSetup(spittleController).build();
         mockMvc.perform(get("/spittles")).andExpect(view().name("spittlesView"));
 
@@ -43,7 +44,8 @@ public class SpittleControllerTest {
         mockMvc
                 .perform(get("/spittles"))
                 .andExpect(view().name("spittles"))
-                .andExpect(model().attributeExists("spittleList", hasItems(expectedSpittles.toArray())));
+                .andExpect(model().attributeExists("spittleList"))
+                .andExpect(model().attribute("spittleList", hasItems(expectedSpittles.toArray())));
 
     }
 

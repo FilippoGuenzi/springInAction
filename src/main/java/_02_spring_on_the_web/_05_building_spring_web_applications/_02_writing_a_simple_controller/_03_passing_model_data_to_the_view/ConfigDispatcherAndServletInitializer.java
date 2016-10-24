@@ -2,7 +2,7 @@ package _02_spring_on_the_web._05_building_spring_web_applications._02_writing_a
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class ConfigDispatcher extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class ConfigDispatcherAndServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] { RootConfig.class };
