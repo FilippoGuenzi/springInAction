@@ -22,15 +22,6 @@ import _02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_
 public class SpittleControllerTest {
 
     @Test
-    public void spittleTest() throws Exception {
-        SpittleRepository mockRepository = mock(SpittleRepository.class);
-        SpittleController spittleController = new SpittleController(mockRepository);
-        MockMvc mockMvc = standaloneSetup(spittleController).build();
-        mockMvc.perform(get("/spittles")).andExpect(view().name("spittlesView"));
-
-    }
-
-    @Test
     public void shouldShowRecentSpittles() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository = mock(SpittleRepository.class);
@@ -38,7 +29,7 @@ public class SpittleControllerTest {
 
         SpittleController controller = new SpittleController(mockRepository);
         MockMvc mockMvc = standaloneSetup(controller)
-                            .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
+                            .setSingleView(new InternalResourceView("/WEB-INF/views/_02/_05/_02/_03/spittles.jsp"))
                             .build();
 
         mockMvc
