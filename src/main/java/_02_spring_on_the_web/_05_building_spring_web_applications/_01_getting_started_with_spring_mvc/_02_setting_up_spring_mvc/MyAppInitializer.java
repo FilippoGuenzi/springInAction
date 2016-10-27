@@ -2,7 +2,7 @@ package _02_spring_on_the_web._05_building_spring_web_applications._01_getting_s
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class MyAppInitializer /*extends AbstractAnnotationConfigDispatcherServletInitializer*/ {
 
     protected String[] getServletMappings() {
         return new String[] { "/" };
