@@ -82,7 +82,7 @@ In order to test your controller you can whether :
         
                 SpittleController controller = new SpittleController(mockRepository);
                 MockMvc mockMvc = standaloneSetup(controller)
-                                    .setSingleView(new InternalResourceView("/WEB-INF/views/_02/_05/_02/_03/spittles.jsp")) // default view resolution would fail because erquest path equals the view path. So we resolve the view here.
+                                    .setSingleView(new InternalResourceView("/WEB-INF/views/_02/_05/_02/_03/spittles.jsp")) // default view resolution would fail because request path equals the view path. So we resolve the view here.
                                     .build(); //create a MockMvc instance for your controller that will allow you to send requests to it and check returned values
     
                 mockMvc
