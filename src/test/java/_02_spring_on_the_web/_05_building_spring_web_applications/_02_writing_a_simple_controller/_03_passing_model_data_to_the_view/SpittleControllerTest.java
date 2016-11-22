@@ -33,7 +33,7 @@ public class SpittleControllerTest {
                             .build();
 
         mockMvc
-                .perform(get("/spittles"))
+                .perform(get("/sc/spittles"))
                 .andExpect(view().name("spittles"))
                 .andExpect(model().attributeExists("spittleList"))
                 .andExpect(model().attribute("spittleList", hasItems(expectedSpittles.toArray())));

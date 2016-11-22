@@ -13,6 +13,6 @@ public class ConfigDispatcherAndServletInitializer extends AbstractAnnotationCon
     }
 
     protected String[] getServletMappings() {
-        return new String[] { "/" };
+        return new String[] { "/aaa/*" };
     }
 }

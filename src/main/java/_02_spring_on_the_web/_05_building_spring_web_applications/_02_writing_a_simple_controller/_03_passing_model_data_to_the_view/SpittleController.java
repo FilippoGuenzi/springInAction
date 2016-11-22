@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import _02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller._03_passing_model_data_to_the_view.data.SpittleRepository;
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/sc")
 public class SpittleController {
 
     private SpittleRepository spittleRepository;

@@ -39,6 +39,9 @@ You can :
 
 The request url will be treated like this :
 hostname/appNameSpecifiedInPomBuildFinalName[/servletMappingSpecifiedInOurConfigDispatcherServletInitializer][/controllerRequestMapping][/methodRequestMapping]
+
+ServletMapping might be of different nature. See http://stackoverflow.com/questions/15385596/servlet-mapping-web-xml
+
 We see that in the controller we can have the @RequestMapping annotation at 2 levels :
 
 - class level
@@ -102,3 +105,8 @@ You then cannot have 2 classes that both :
 
 Check if by changing the ServletMapping something changes. --> no
 What if you change only the RequestMapping ? --> problem doesn't change
+
+In order to make my examples work :
+ 
+- whether I exclude classes from the build
+- or I comment extend AbstractAnnotationConfigDispatcherServletInitializer on the examples I am not using
