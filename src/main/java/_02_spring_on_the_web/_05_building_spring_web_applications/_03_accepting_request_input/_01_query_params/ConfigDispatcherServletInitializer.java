@@ -1,8 +1,8 @@
-package _02_spring_on_the_web._05_building_spring_web_applications._02_writing_a_simple_controller._01_testing_the_controller;
+package _02_spring_on_the_web._05_building_spring_web_applications._03_accepting_request_input._01_query_params;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MyConfigDispatcher extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class ConfigDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] { RootConfig.class };
