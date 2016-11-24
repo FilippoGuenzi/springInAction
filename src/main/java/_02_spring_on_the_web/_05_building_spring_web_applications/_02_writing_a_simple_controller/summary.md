@@ -44,7 +44,10 @@ hostname/appName[/servletMapping][/controllerRequestMapping][/methodRequestMappi
     - specified in pom <build><finalName>...</finalName</build>.
     - specified in <plugin><configuration><path>...</path> of <artifactId>tomcat7-maven-plugin</artifactId>
     - In Spring Boot it is specified as server: context-path: /...
-- ServletMapping : specified in our ConfigDispatcherServletInitializer. It might be of different nature. See http://stackoverflow.com/questions/15385596/servlet-mapping-web-xml. ServletMapping is les and less used. Before we had a Tomcat with a Servlet container containing many servlet, each one having to respond to a specific url pattern. The tendency for big projects is to have a dedicated server containing a single app. With war Tomcat is starting the war. In Spring boot we use jar and the app contains and starts the dedicated Tomcat/Jetty.   
+- ServletMapping : specified in our ConfigDispatcherServletInitializer. It might be of different nature. See http://stackoverflow.com/questions/15385596/servlet-mapping-web-xml. 
+    ServletMapping is les and less used. Before we had a Tomcat with a Servlet container containing many servlet, each one having to respond to a specific url pattern.
+    The tendency for big projects is to have a dedicated server containing a single app. With war Tomcat is starting the war.
+    In Spring boot we use jar and the app contains and starts the dedicated Tomcat/Jetty.
 
 We see that in the controller we can have the @RequestMapping annotation at 2 levels :
 
