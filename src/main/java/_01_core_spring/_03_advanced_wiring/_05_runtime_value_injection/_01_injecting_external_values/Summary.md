@@ -5,7 +5,7 @@ Here we're not injecting beans but values
 
 In order to inject an object we haven't defined in one of our beans in explicit Java config we prefix it with @Autowired (that we saw only in automatic wiring).
 Ex : 
-
+```
     @Configuration
     @PropertySource("listing_in_01_03_05_01/prop.properties")
     public class SpringConfiguration {
@@ -20,26 +20,26 @@ Ex :
             return new SpecificCD(author, title);
         }
     }
-
+```
 Here another new thing is the @PropertySource which refers to the location of the properties file we want to use.
 With @Autowired in front of Environment we can use it in our bean declaration methods.
 
 Environment has these methods :
-- getProperty("prop") -> propValue or null if not found
-- getProperty("prop", defaultValueIfPropNotFound) -> propValue or defaultValueIfPropNotFound
-- getProperty("prop", Type) -> propValue converted in Type or null if not found
-- getProperty("prop", Type, defaultValueIfPropNotFound) -> propValue or defaultValueIfPropNotFound, converted in Type
+* getProperty("prop") -> propValue or null if not found
+* getProperty("prop", defaultValueIfPropNotFound) -> propValue or defaultValueIfPropNotFound
+* getProperty("prop", Type) -> propValue converted in Type or null if not found
+* getProperty("prop", Type, defaultValueIfPropNotFound) -> propValue or defaultValueIfPropNotFound, converted in Type
 
-- getRequiredProperty("prop") --> as getProperty() but throws an IllegalStateException if prop not found
+* getRequiredProperty("prop") --> as getProperty() but throws an IllegalStateException if prop not found
 
-- containsProperty("prop") to check if prop exists
+* containsProperty("prop") to check if prop exists
 
-- getPropertyAsClass(") to resolve a property into a class (Class<CompactDisc> cdClass = env.getPropertyAsClass("prop", CompactDisc.class)) 
+* getPropertyAsClass(") to resolve a property into a class (Class<CompactDisc> cdClass = env.getPropertyAsClass("prop", CompactDisc.class))
 
 Other interesting environment methods :
-- String[] getActiveProfiles()
-- String[] getDefaultProfiles()
-- boolean acceptsProfiles(String[] profiles)
+* String[] getActiveProfiles()
+* String[] getDefaultProfiles()
+* boolean acceptsProfiles(String[] profiles)
 
 2. Resolving property placeholders
 ----------------------------------
@@ -53,7 +53,7 @@ Your bean has a simple constructor and the injection is made in the configuratio
 Java config
 -----------
 The same here. The bean is a plain POJO with no Spring writing. The injection is made in the configuration file.
-
+```
     @PropertySource("listing_in_01_03_05_01_02/_02_java_config/prop.properties")
     public class SpringConfig {
     
@@ -67,22 +67,23 @@ The same here. The bean is a plain POJO with no Spring writing. The injection is
             return new PropertySourcesPlaceholderConfigurer();
         }
     }
-    
+```
 The new part here is :
-- the @PropertySource pointing to your properties file
-- the @Value("${propName}") in front of each @Bean method parameter
-- the PropertySourcesPlaceholderConfigurer bean to enable spring to resolve the placeholders
+* the @PropertySource pointing to your properties file
+* the @Value("${propName}") in front of each @Bean method parameter
+* the PropertySourcesPlaceholderConfigurer bean to enable spring to resolve the placeholders
 
 Java Auto wiring
 ----------------
 Here the spirit is to have the minimum in the config file (in order to have it auto). But you still have to add the :
-
+```
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
+```
 to resolve the property values.
 And we add the @PropertySource pointing to your properties file
 In the bean we just :
-- add @Value("${propName}") in front of the constructor arguments
-- prefix the constructor with @Autowired
+* add @Value("${propName}") in front of the constructor arguments
+* prefix the constructor with @Autowired

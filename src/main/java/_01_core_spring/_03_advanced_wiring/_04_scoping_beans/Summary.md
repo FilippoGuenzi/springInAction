@@ -1,26 +1,27 @@
 The lifetime of a bean depends on its scope.
 The default scope is singleton.
 Here are all possible scopes :
-- Singleton : one only instance of the bean is created for the whole application.
+* Singleton : one only instance of the bean is created for the whole application.
   Each time the bean is injected in the application, it's always the sae instance being injected.
-- Prototype : a new instance is created at each injection.
+* Prototype : a new instance is created at each injection.
   We could say that each instance is a 'singleton' shared across users.
-- Request : in a web application, the same instance is kept at each injection for the lifetime of the request
+* Request : in a web application, the same instance is kept at each injection for the lifetime of the request
   We could say that each request instance is a 'singleton' shared across points of injection.  
-- Session : in a web application, the same instance is kept at each injection for the lifetime of the session
+* Session : in a web application, the same instance is kept at each injection for the lifetime of the session
   We could say that each session instance is a 'singleton' shared across points of injection.
 
 Singleton and prototype scoped beans get created as soon as the application context is created.
 Requests and sessions scoped beans get created with the requests and sessions. 
 
 To change the scope of a bean you put @Scope(...) :
-- whether on the bean definition in component scanning
-- or on the bean declaration in java config
+* whether on the bean definition in component scanning
+* or on the bean declaration in java config
+```
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) || @Scope(value=ConfigurableBeanFactory.SCOPE_SINGLETON)
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Scope(WebApplicationContext.SCOPE_REQUEST)
 @Scope(WebApplicationContext.SCOPE_SESSION)
-
+```
 In XML the bean element has a scope attribute that you can set to singleton, ...
 
 Here we have 2 independent dimensions : space and users.

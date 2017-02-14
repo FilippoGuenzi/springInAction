@@ -10,6 +10,7 @@ Spring context configuration turns Minstrel into an aspect.
 
 AOP configuration
 -----------------
+```
 <beans xmlns="http://www.springframework.org/schema/beans"
        ...
        xmlns:aop="http://www.springframework.org/schema/aop"
@@ -28,4 +29,4 @@ AOP configuration
             <aop:after method="singAfterQuest" pointcut-ref="embark"/> <!--after advice-->
         </aop:aspect>
     </aop:config>
-
+```

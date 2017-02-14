@@ -28,12 +28,12 @@ Ambiguity come back when at least two of your beans to be injected have the same
 A solution would be to add more @Qualifier("...") annotations to distinguish them, 
 qualifying each bean with more traits and confiding that by describing in greater details your beans you'll have unique traits.
 Java doesn't allow you to have several times the same annotation (unless it is itself annotated with @Repeatable, which isn't the case here). We have to create our own.
- 
+```
 @Target({ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Qualifier
 public @interface Cold { }
-
+```
 In my opinion, since the qualifier can be written on the bean definition or on the bean declaration in Java config,
 plus on the method to be @Autowired, ElementType shouldn't be different from ElementType.METHOD, ElementType.TYPE. 
 In fact they're not required by Spring for qualifiers to work.

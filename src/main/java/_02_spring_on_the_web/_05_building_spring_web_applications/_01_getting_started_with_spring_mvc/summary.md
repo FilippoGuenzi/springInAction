@@ -1,17 +1,17 @@
 Refer to illustrations on :
-- DispatcherServlet, and MVC
-- how DispatcherServlet relates to AbstractAnnotationConfigDispatcherServletInitializer
+* DispatcherServlet, and MVC
+* how DispatcherServlet relates to AbstractAnnotationConfigDispatcherServletInitializer
 
 AbstractAnnotationConfigDispatcherServletInitializer creates both :
-- DispatcherServlet (responsible for creating the Spring context containing Handler Mappings, Controllers, View resolvers, Views)
-- ContextLoaderListener (responsible for creating the Spring context that will hosts business beans)
+* DispatcherServlet (responsible for creating the Spring context containing Handler Mappings, Controllers, View resolvers, Views)
+* ContextLoaderListener (responsible for creating the Spring context that will hosts business beans)
 
 DispatcherServlet will create a Spring application context and loads it with beans declared in the configuration classes returned by getServletConfigClasses.
 
 ServletConfig explanation :
-
+```
     //this is the configuration file for the Application Context created by DispatcherServlet
-    
+
     @Configuration
     @EnableWebMvc //to use Spring MVC, otherwise its remains a normal Spring configuration file
     @ComponentScan(basePackages = "...")
@@ -33,3 +33,4 @@ ServletConfig explanation :
             configurer.enable();
         }
     }
+```

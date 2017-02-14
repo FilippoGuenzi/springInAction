@@ -6,17 +6,18 @@ we can build an only artifact which will select the appropriate resources at run
 Configuring profiles in Java config
 -----------------------------------
 Spring introduced a @Profile annotation that you use in a @Configuration annotated class :
-- whether at class level
-- or at @Bean level
+* whether at class level
+* or at @Bean level
 
 Any bean that isn't annotated by a profile or whose configuration class isn't annotated by a profile will always be created.
 
 Configuring profiles in XML config
----------------------------------------
+----------------------------------
+```
     <beans xmlns="..." ... profile="">...</beans>
-
+```
 or
-
+```
     <beans xmlns="..." ... >
     
         <beans profile="dev">
@@ -30,3 +31,4 @@ or
         </beans>
     
     </beans>
+```
