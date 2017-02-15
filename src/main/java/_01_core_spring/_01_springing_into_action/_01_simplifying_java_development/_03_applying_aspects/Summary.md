@@ -3,7 +3,7 @@ The business components, which have their own functionality, are scattered with 
 To group the system-wide logic into one single place (more reusable if you change the logic) and to let the business components as plain POJOs
 we use AOP.
 
-With AOP any Aspect, like Minstrel here is a simple POJO to be declared as a spring bean.
+With AOP any Aspect, like Minstrel here, is a simple POJO to be declared as a spring bean.
 Minstrel doesn't know about the Knight and the Knight doesn't know about the Minstrel. Both are unaware of each other.
 Both are simple beans.
 Spring context configuration turns Minstrel into an aspect.
@@ -24,9 +24,16 @@ AOP configuration
     <bean id="minstrel" ...>...</bean>
     <aop:config>
         <aop:aspect ref="minstrel"> <!--turns the minstrel bean into an aspect-->
-            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/> <!--poincut : where about the advices will be applied-->
-            <aop:before method="singBeforeQuest" pointcut-ref="embark"/> <!--before advice-->
-            <aop:after method="singAfterQuest" pointcut-ref="embark"/> <!--after advice-->
+
+            <!--poincut : where about the advices will be applied-->
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/>
+
+            <!--before advice-->
+            <aop:before method="singBeforeQuest" pointcut-ref="embark"/>
+
+            <!--after advice-->
+            <aop:after method="singAfterQuest" pointcut-ref="embark"/>
+
         </aop:aspect>
     </aop:config>
 ```

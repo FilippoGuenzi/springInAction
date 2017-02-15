@@ -23,10 +23,10 @@ XML wiring
     <bean id="b" class="...implementationClassB">
 </beans>
 ```
-In class you don't specify the interface but the real implementation that will be initialized with it's full Canonical Name
-In ref of the constructor-arg you put the id of the been that will be injected.
-Instead of ref you can have value, when you're injecting beans you directly point to with the Spring Expression Language SpEL.
-A good place for spring xml configuration files to be seen by spring is src/main/resources or subfolders.
+In ```class="..."``` you don't specify the interface but the real implementation that will be initialized with it's full Canonical Name.
+In ```ref``` of the ```constructor-arg``` you put the id of the been that will be injected.
+Instead of ```ref``` you can have ```value```, when you're injecting beans you directly point to with the Spring Expression Language SpEL.
+A good place for spring xml configuration files to be seen by spring is ```src/main/resources``` or subfolders.
 
 Java wiring
 -----------
@@ -34,9 +34,13 @@ Java wiring
 @Configuration
 public class KnightConfig {
     @Bean
-    public Knight knight(){return new BraveKnight(quest());}
+    public Knight knight(){
+        return new BraveKnight(quest());
+    }
     @Bean
-    public Quest quest(){return new SlayDragonQuest(System.out);}
+    public Quest quest(){
+        return new SlayDragonQuest(System.out);
+    }
 }
 ```
 In both XML-based and Java-based config classes don't know the implementation of their dependencies.

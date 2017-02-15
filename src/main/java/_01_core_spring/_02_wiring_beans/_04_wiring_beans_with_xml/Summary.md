@@ -1,5 +1,4 @@
-MINIMAL SPRING XML CONFIGURATION
---------------------------------
+# MINIMAL SPRING XML CONFIGURATION
 
 To create a new spring configuration XML file use IDE new Spring config file instead of learning it by heart. It just creates the mininum required.
 ```
@@ -11,8 +10,7 @@ To create a new spring configuration XML file use IDE new Spring config file ins
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 </beans>
 ```
-DECLARING BEANS
----------------
+## DECLARING BEANS
 
 Now you can add bean declarations in the middle.
 ```
@@ -27,8 +25,7 @@ Ex : com.soundsystem.SgtPeppers#0. It's better to give a more user-friendly id f
 
 With nothing more Spring will instantiate the bean by using its default constructor.
 
-WIRING BEANS
-------------
+## WIRING BEANS
 
 Spring requires every constructor parameter to be provided in wiring configuration 
 
@@ -60,8 +57,7 @@ You can also use an attribute refering to the parameter position in the construc
 (! this one its not working here) If you have just one parameter you can also say : c:_-ref avoiding to give its position
 You can also add 
 
-INJECTING VALUES INSTEAD OF BEANS
----------------------------------
+## INJECTING VALUES INSTEAD OF BEANS
 
 If instead of wiring beans together by constructor injection you want to pass the constructors values :
 ```
@@ -87,8 +83,8 @@ or with parameter indexes
 ```
 <bean class="...C1" c:_0="Les Misérables" c:_1="Victor Hugo"/>
 ```
-WIRING COLLECTIONS
-------------------
+## WIRING COLLECTIONS
+
 ```
 <bean class="...">
     <constructor-arg>
@@ -114,8 +110,8 @@ WIRING COLLECTIONS
 We can use set instead of list.
 Either set or list can be wired into a list, set or even array !! The only difference is that with sets duplicates are discarded and order is not maintained.
 
-PROPERTY (SETTER) INJECTION
----------------------------
+## PROPERTY (SETTER) INJECTION
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
