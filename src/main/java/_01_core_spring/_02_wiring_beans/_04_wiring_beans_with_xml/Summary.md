@@ -1,6 +1,7 @@
 # MINIMAL SPRING XML CONFIGURATION
 
-To create a new spring configuration XML file use IDE new Spring config file instead of learning it by heart. It just creates the mininum required.
+To create a new spring configuration XML file, use IDE (new Spring config file), instead of learning it by heart.
+It just creates the mininum required.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -17,11 +18,14 @@ Now you can add bean declarations in the middle.
 <bean id="" class="" />
 ```
 where :
-* id is the id you give to the bean : it can be useful for wiring when the depending bean needs to refer to the bean it depends on.
+* id is the id you give to the bean : it can be useful for wiring when the depending bean needs to refer to the bean
+it depends on.
 * class is the full canonical name of the implementation class to instantiate as a bean
 
-If the id is omitted Spring will give the bean the full qualified (canonical) class name suffixed with #0 for the 1st instance, #1, ...
-Ex : com.soundsystem.SgtPeppers#0. It's better to give a more user-friendly id for the ease of referencing it later. But if you don't have to use this id avoid specifying it so that your xml, already verbose, becomes tinier.
+If the id is omitted Spring will give the bean the full qualified (canonical) class name suffixed with #0 for the 1st
+instance, #1, ...
+Ex : com.soundsystem.SgtPeppers#0. It's better to give a more user-friendly id for the ease of referencing it later.
+But if you don't have to use this id avoid specifying it so that your xml, already verbose, becomes tinier.
 
 With nothing more Spring will instantiate the bean by using its default constructor.
 
@@ -38,7 +42,8 @@ In order to achieve wiring by constructor injection :
 ```
 where C1 has a constructor taking a C2 object as parameter
 
-When there's more than one parameter in the constructor you add the attribute index=0...n to specify the parameter's position.
+When there's more than one parameter in the constructor you add the attribute index=0...n to specify the parameter's
+position.
 ```
 <bean class="...C1">
     <constructor-arg index=0 ref="c2"/>
@@ -49,13 +54,17 @@ When there's more than one parameter in the constructor you add the attribute in
 ```
 or 
 ```
-<bean class="...C1" c:abcd-ref="c2"/> //where abcd is the C1 constructor C2 parameter name : class C1 { public C1(C2 abcd){...} }
+//where abcd is the C1 constructor C2 parameter name : class C1 { public C1(C2 abcd){...} }
+<bean class="...C1" c:abcd-ref="c2"/>
 <bean id="c2" class="...C2" />
 ```
-In order to use c-ref attribute you need to add its namespace to the beans tag : xmlns:c="http://www.springframework.org/schema/c"
+In order to use c-ref attribute you need to add its namespace to the beans tag :
+```xmlns:c="http://www.springframework.org/schema/c"```
+
 You can also use an attribute refering to the parameter position in the constructor : c:_0-ref
-(! this one its not working here) If you have just one parameter you can also say : c:_-ref avoiding to give its position
-You can also add 
+(! this one its not working here)
+
+If you have just one parameter you can also say : c:_-ref avoiding to give its position
 
 ## INJECTING VALUES INSTEAD OF BEANS
 
@@ -108,7 +117,8 @@ or with parameter indexes
 </bean>
 ```
 We can use set instead of list.
-Either set or list can be wired into a list, set or even array !! The only difference is that with sets duplicates are discarded and order is not maintained.
+Either set or list can be wired into a list, set or even array !!
+The only difference is that with sets duplicates are discarded and order is not maintained.
 
 ## PROPERTY (SETTER) INJECTION
 
@@ -128,11 +138,16 @@ Either set or list can be wired into a list, set or even array !! The only diffe
 
 </beans>
 ```
-Your IDE won't require you to add a property because, contrarily than at initialisaton of a bean with only a non default constructor, the method call is not required for the initialisation and is therefore optional.
+Your IDE won't require you to add a property because, contrarily than at initialisaton of a bean with only a non
+default constructor, the method call is not required for the initialisation and is therefore optional.
 
-As we had a c-namespace for constructor injection we have a p-namespace for property/field injection. It works the same.
+As we had a c-namespace for constructor injection we have a p-namespace for property/field injection.
 
-Injecting values you'll have a value attribute instead of a ref attribute. You also need to fill the name attribute, which is the property name.
+It works the same.
+
+Injecting values you'll have a value attribute instead of a ref attribute. You also need to fill the name attribute,
+which is the property name.
+
 With p-namespace you'll have a p:propertyName attribute instead of a c:parameterName-ref attribute.
 ```
 |                      | injecting bean references  | injecting values             | injecting collections of bean refs                             | injecting collections of values                                 |
