@@ -15,7 +15,7 @@ You can refer to instanciated beans and their properties directly with their nam
 #{steelWheels.artist}
 ```
 You can also access properties in system properties with ```#{systemProperties['vin.cepage']}``` :
-```systemProperties``` are the options like ```-DmyOption=...``` in command line (VM options in IntelliJ launcher configurations)
+systemProperties are the options like ```-DmyOption=...``` in command line (VM options in IntelliJ launcher configurations)
 
 ## Expressing litteral values
 
@@ -29,7 +29,7 @@ You can also inject values like
 
 ## Referencing beans properties and methods
 
-We can, even without injecting the referenced bean into the one referencing it do the following in an @Autowired method :
+We can, even without injecting the referenced bean into the one referencing it, do the following in an @Autowired method :
 ```
 #{sgtPeppers}
 #{sgtPeppers.artist} //provided artist as a getter
@@ -68,15 +68,21 @@ Ex : ```#{admin.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}``` --> e
 ## Evaluating collections
 
 For collections and Arrays you reference an item in array style ```myBean.myThings[i]```
+
 You can keep on invoking fields and methods of the referenced item in the collection/array.
 ```myBean.myThings[i].surface()```
-The array notation works also on Strings, retrieving the ith character : ```'a beautiful tree'[7] gives 'i'```
+
+The array notation works also on Strings, retrieving the ith character : ```'a beautiful tree'[7]``` gives 'i'
+
 You can filter a collection with a condition retrieving only the items verifying the condition :
 ```myBean.myThings.?[surface > 50]```
+
 You can retrieve the first item of a filtered collection :
 ```myBean.myThings.^[surface > 50]```
+
 You can retrieve the last item of a filtered collection :
 ```myBean.myThings.$[surface > 50]```
+
 You can project a collection to retrieve a collection of a chosen field :
 ```myBean.myThings.![surface] // here you get a collection of surfaces```
 
