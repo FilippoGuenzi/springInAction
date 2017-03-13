@@ -29,7 +29,7 @@ public class SpittleControllerTest {
 
         SpittleController controller = new SpittleController(mockRepository);
         MockMvc mockMvc = standaloneSetup(controller)
-                            .setSingleView(new InternalResourceView("/WEB-INF/views/_02/_05/_02/_03/spittles.jsp"))
+                            .setSingleView(new InternalResourceView("/WEB-INF/views/_02/_05/_02/_03/spittles.html"))
                             .build();
 
         mockMvc

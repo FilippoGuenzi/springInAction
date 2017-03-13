@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Spittles</title>
     <script type="text/javascript" src="WEB-INF/js/libraries/handlebars.js"></script>
     <script type="text/javascript" src="WEB-INF/js/libraries/jquery.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/style.css"/>
+
     <script type="text/x-handlebars-template" id="template">
         <ul>
             {{#each spittleList}}
@@ -17,11 +21,10 @@
             {{/each}}
         </ul>
     </script>
-    <script type="text/javascript" src="WEB-INF/js/libraries/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="/resources/style.css"/>
+
 </head>
     <body>
-        <a href="/spittles">Spittles</a> |
-        <a href="/spitter/register">Register</a>
+        <a href="/spittles">Spittles</a> | <a href="/spitter/register">Register</a>
+        <div id="spittleList"/>
     </body>
 </html>
