@@ -4,10 +4,13 @@
 
     <meta charset="UTF-8">
     <title>Spittles</title>
-    <script type="text/javascript" src="WEB-INF/js/libraries/handlebars.js"></script>
-    <script type="text/javascript" src="WEB-INF/js/libraries/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../js/libraries/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../js/libraries/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../js/libraries/handlebars.js"></script>
+    <script type="text/javascript" src="../../../../../js/libraries/backbone.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="/resources/style.css"/>
+    <script type="text/javascript" src="spittle-router.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
 
     <script type="text/x-handlebars-template" id="template">
         <ul>
@@ -15,7 +18,7 @@
                 <li id="spittle_{{id}}">
                     <div class="spittleMessage">{{message}}</div>
                     <div>
-                        <span class="spittleTime">{{time}}</span><span class="spittleLocation"> ({{latitude}},{{longitude}})</span>
+                        <span class="spittleTime">{{time}}</span><span class="spittleLocation"> ({{latitude}}, {{longitude}})</span>
                     </div>
                 </li>
             {{/each}}
@@ -24,7 +27,8 @@
 
 </head>
     <body>
-        <a href="/spittles">Spittles</a> | <a href="/spitter/register">Register</a>
+        Coucou
+        <!--a href="/spittles">Spittles</a> | <a href="/spitter/register">Register</a-->
         <div id="spittleList"/>
     </body>
 </html>
