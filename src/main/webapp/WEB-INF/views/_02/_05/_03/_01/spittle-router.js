@@ -1,15 +1,16 @@
 $(
     function () {
-        var Router = Backbone.Router.extend({
+        window.app = window.app || { };
+        window.app.Router = Backbone.Router.extend({
             routes: {
                 '*spittles': 'spittleApp'
             },
-            spittleApp: function (params) {
-                console.log(params);
+            spittleApp: function () {
+                console.log(arguments);
             }
         });
 
-        var myRouter = new Router();
+        window.app.router = new window.app.Router();
         Backbone.history.start();
     }
 );

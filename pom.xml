@@ -66,6 +66,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
+        <!--to return serialized objects when using @ResponseBody-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.7</version>
+        </dependency>
 
     </dependencies>
 
@@ -75,6 +81,9 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
+                <configuration>
+                    <path>/jojo2</path>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -86,7 +95,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>jojo</finalName>
     </build>
 
 </project>

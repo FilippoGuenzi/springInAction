@@ -29,6 +29,8 @@ You can qualify your bean :
  - whether on the bean definition
  - or on the bean declaration in explicit Java config.
 
+In the class you inject your bean in @Qualifier must be close to the @Autowired/@Inject annotation. If your @Inject annotation is on the field your qualifier must be on the field. If your @Inject annotation is on the constructor, then the @Qualifier must be on the parameter, not on the field.
+
  (to test ...)
 
 Ambiguity come back when at least two of your beans to be injected have the same qualifier.

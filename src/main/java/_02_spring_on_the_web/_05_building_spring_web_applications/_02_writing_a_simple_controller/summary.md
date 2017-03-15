@@ -46,7 +46,7 @@ The request url will be treated like this :
 
 * appName : can be specified in many places
     * specified in pom <build><finalName>...</finalName</build>.
-    * specified in <plugin><configuration><path>...</path> of <artifactId>tomcat7-maven-plugin</artifactId>
+    * specified in <plugin><configuration><path>...</path> of <artifactId>tomcat7-maven-plugin</artifactId> (best solution when using tomcat7 plugin to run the app)
     * In Spring Boot it is specified as server: context-path: /...
 
 * ServletMapping : specified in our AbstractAnnotationConfigDispatcherServletInitializer. It might be of different nature. See http://stackoverflow.com/questions/15385596/servlet-mapping-web-xml.
